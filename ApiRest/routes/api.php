@@ -18,6 +18,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('categoria','App\Http\Controllers\CategoriaController@getCategoria');
+//Ruta del api para obtener todas las categorias:
+Route::get('categoria', 'App\Http\Controllers\CategoriaController@getCategoria');
 
-Route::get('categoria/{id}','App\Http\Controllers\CategoriaController@getCategoriaById');
+//Ruta del api para obtener una categoria por su id:
+Route::get('categoria/{id}', 'App\Http\Controllers\CategoriaController@getCategoriaById');
+
+//Ruta del api para hacer un post o registro de una categoria:
+Route::post('addCategoria', 'App\Http\Controllers\CategoriaController@insertCategoria');
+
+//Ruta del api para hacer un put o modificar una categoria:
+Route::put('updateCategoria/{id}', 'App\Http\Controllers\CategoriaController@updateCategoria');
+
+//Ruta del api para hacer un delete o eliminar una categoria:
+Route::delete('deleteCategoria/{id}','App\Http\Controllers\CategoriaController@deleteCategoria');

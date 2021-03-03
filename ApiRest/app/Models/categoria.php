@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class categoria extends Model
 {
     protected $table ='categorias';
-    public $timestamps=false;
+    public $timestamps=true;
     protected $fillable=['id','catNom','catObs'];
 }
